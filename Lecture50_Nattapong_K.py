@@ -27,4 +27,4 @@ elif select == 3:
 elif select == 4:
     divine(Q1, Q2)
 else:
-    print("Error!!!")
+    print("Error!")
