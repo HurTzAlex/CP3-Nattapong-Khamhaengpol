@@ -77,7 +77,7 @@ if userInput == "admin" and passInput == "1234":
         total = orderPrice * item
 
     print(orderName, orderPrice, "x", item)
-    print("Your order is ", orderName, orderPrice, "x", item, " = ", total, "Baht")
+    print("Your order is", orderName, orderPrice, "x", item, " = ", total, "Baht")
     print("----------------------------------------------")
     print("---------------- Thank you -------------------")
     print("-------------- Enjoy your day ----------------")
