@@ -31,4 +31,4 @@ def priceCalculator():
     price2 = int(input("Second Product Price : "))
     return vatCalculator(price1 + price2)
 
-login()
+login() # เรียกการใช้งาน
