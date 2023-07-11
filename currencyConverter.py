@@ -5,6 +5,7 @@
 from currency_converter import CurrencyConverter
 from currency_converter import ECB_URL
 from tkinter import *
+from tkinter import messagebox
 from datetime import date
 
 # Variable
@@ -45,15 +46,18 @@ def currenConvert():
 
 # Create Function : dateCheck
 def dateCheck():
-    et_value_from = et_cv_from.get()
-    uppercase_from = et_value_from.upper()
-    et_value_to = et_cv_to.get()
-    uppercase_to = et_value_to.upper()
+    try:
+        et_value_from = et_cv_from.get()
+        uppercase_from = et_value_from.upper()
+        et_value_to = et_cv_to.get()
+        uppercase_to = et_value_to.upper()
 
-    date_check_convert = c.convert(float(et_cv_amount.get()), str(uppercase_from), str(uppercase_to), date=date(int(et_date_year.get()), int(et_date_month.get()), int(et_date_date.get())))
+        date_check_convert = c.convert(float(et_cv_amount.get()), str(uppercase_from), str(uppercase_to), date=date(int(et_date_year.get()), int(et_date_month.get()), int(et_date_date.get())))
 
-    date_check_convert_str = "{:.3f}".format(date_check_convert)
-    lb_date_result.configure(text=float(date_check_convert_str))
+        date_check_convert_str = "{:.3f}".format(date_check_convert)
+        lb_date_result.configure(text=float(date_check_convert_str))
+    except ValueError:
+        messagebox.showerror("Converter" ,"Invalid date time input")
 
 # Create Function : deleteConvertText
 def deleteConvertText():
